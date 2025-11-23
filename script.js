@@ -101,6 +101,32 @@ marqueeInner.addEventListener("mouseover", function (e) {
     speed = 0; // Pause marquee
 });
 
+// Tap-to-play only on small screens
+marqueeInner.addEventListener("click", function (e) {
+    if (!isMobile) return; // Only run on mobile
+
+    const card = e.target.closest(".video-hover-card");
+    if (!card) return;
+
+    const thumb = card.querySelector(".video-thumb");
+    const iframe = card.querySelector("iframe");
+    const unmuteBtn = card.querySelector(".unmute-btn");
+
+    // Toggle video visibility
+    if (iframe.classList.contains("hidden")) {
+        thumb.style.opacity = "0";
+        iframe.classList.remove("hidden");
+        unmuteBtn.style.display = "block";
+        speed = 0; // Pause marquee
+    } else {
+        thumb.style.opacity = "1";
+        iframe.classList.add("hidden");
+        unmuteBtn.style.display = "none";
+        speed = 0.9; // Resume marquee
+    }
+});
+
+
 marqueeInner.addEventListener("mouseout", function (e) {
     const card = e.target.closest(".video-hover-card");
     if (!card || !card.closest(".original-card")) return;
@@ -148,9 +174,107 @@ document.addEventListener("DOMContentLoaded", () => {
   
  
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS (since you are using it in the HTML)
+    AOS.init({
+        duration: 800,
+        once: true,
+    });
+
+    const menuButton = document.getElementById('mobile-menu-button');
+    const menuOverlay = document.getElementById('mobile-menu-overlay');
+    const header = document.querySelector('header');
+    const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+    // Function to toggle the menu state
+    function toggleMenu() {
+        // Toggle the class on the button for the cross animation
+        menuButton.classList.toggle('menu-open'); 
+        
+        // Toggle the class on the overlay for the slide animation
+        if (menuOverlay.classList.contains('translate-x-full')) {
+            // Open menu
+            menuOverlay.classList.remove('translate-x-full');
+            // Add a class to the body to prevent scrolling when menu is open
+            document.body.style.overflow = 'hidden'; 
+        } else {
+            // Close menu
+            menuOverlay.classList.add('translate-x-full');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    }
+
+    // 1. Open/Close on Button Click
+    menuButton.addEventListener('click', toggleMenu);
+
+    // 2. Close when a link is clicked (for smooth scroll to section)
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Wait slightly longer than the AOS delay to ensure the animation starts
+            setTimeout(toggleMenu, 100); 
+        });
+    });
+
+    // 3. Close menu on resize above MD breakpoint (desktop)
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768 && !menuOverlay.classList.contains('translate-x-full')) {
+            // Close menu if resized to desktop size while open
+            toggleMenu(); 
+        }
+    });
+});
 
 
 
 
+        // Function to handle form submission
+        function handleSubmit(event) {
+            event.preventDefault(); // Stop the default form submission
 
-  
+            const messageBox = document.getElementById('messageBox');
+            const messageText = document.getElementById('messageText');
+            const form = document.getElementById('contactForm');
+            const submitButton = document.getElementById('submitButton');
+
+            // 1. Disable the button and show loading state
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            submitButton.classList.add('opacity-70'); // Dim the button while loading
+
+            // Clear previous messages
+            messageBox.classList.add('hidden');
+            
+            // 2. Simulate API call / form processing (Replace with real logic if needed)
+            setTimeout(() => {
+                // Assuming successful submission for this example
+                const success = true;
+
+                // Reset message box classes (Dark Mode adjustments)
+                messageBox.classList.remove('hidden', 'bg-red-800', 'border-red-600', 'text-red-300', 'bg-green-800', 'border-green-600', 'text-green-300', 'bg-gray-800', 'border-gray-600', 'text-gray-200');
+                
+                if (success) {
+                    // Success state (Dark Mode Colors)
+                    messageBox.classList.add('bg-green-800', 'border-green-600', 'text-green-300');
+                    messageText.textContent = 'Success! Your message has been sent.';
+                    form.reset(); // Clear the form fields
+                } else {
+                    // Error state (Dark Mode Colors)
+                    messageBox.classList.add('bg-red-800', 'border-red-600', 'text-red-300');
+                    messageText.textContent = 'Error: Could not send message. Please try again.';
+                }
+
+                // Show the message box
+                messageBox.classList.remove('hidden');
+
+                // 3. Reset button state
+                submitButton.textContent = 'Send Message';
+                submitButton.disabled = false;
+                submitButton.classList.remove('opacity-70');
+
+                // 4. Optionally hide the message after a few seconds
+                setTimeout(() => {
+                    messageBox.classList.add('hidden');
+                }, 5000);
+
+            }, 2000); // 2 second delay to simulate network latency
+        }

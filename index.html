@@ -32,33 +32,108 @@
 </a>
 
 <!-- banner -->
-<section class="w-full min-h-screen flex flex-col items-center justify-start pt-4 px-2 sm:px-6 lg:px-16 text-center">
-  <div class="w-full flex flex-col items-center gap-2">
+<nav class="nav-mirror fixed w-full z-20 top-0 start-0">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+   <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+  <!-- Gradient Video Camera / Film Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="2">
+    <defs>
+      <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#e4afcb"/>
+        <stop offset="0%" stop-color="#b8cbb8"/>
+        <stop offset="0%" stop-color="#b8cbb8"/>
+        <stop offset="30%" stop-color="#e2c58b"/>
+        <stop offset="64%" stop-color="#c2ce9c"/>
+        <stop offset="100%" stop-color="#7edbdc"/>
+      </linearGradient>
+    </defs>
+    <path stroke="url(#iconGradient)" stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M4 6h11a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z" />
+  </svg>
 
-    <!-- Text + links -->
-    <div class="flex flex-col items-center space-y-6">
-      <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text min-h-[1em]" 
-          style="background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);">
-        ASAD SALEEM
-      </h1>
-          
-      <div class="flex gap-10 mt-4 text-xl font-medium" style="color: #666666;">
-        <a href="#short" class="hover:text-cyan-400 transition-colors">[SHORTHAND VIDEOS]</a>
-        <a href="#recent" class="hover:text-cyan-400 transition-colors">[RECENT]</a>
-        <a href="#reels" class="hover:text-cyan-400 transition-colors">[REELS]</a>
-      </div>
-    </div>
+  <!-- Text Logo -->
+  <span class="self-center text-2xl font-bold text-white tracking-wide select-none" style="font-family: 'Playfair Display', serif;">
+    VES
+  </span>
+</a>
 
-    <!-- Video -->
-    <div class="w-full h-auto p-0 flex items-center justify-center mt-6">
-      <div class="w-full max-w-[98vw] mx-auto px-2">
-        <video class="w-full h-[90vh] object-cover rounded-xl" autoplay loop muted playsinline>
-          <source src="portofolio.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
 
+    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+       <button class="btn-53 hidden md:block">
+
+  <div class="original">GET STARTED</div>
+  <div class="letters">
+    
+    <span>G</span>
+    <span>E</span>
+     <span>T</span>
+    <span>S</span>
+     <span>T</span>
+    <span>A</span>
+    <span>R</span>
+    <span>T</span>
+     <span>E</span>
+      <span>D</span>
   </div>
+</button>
+        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/></svg>
+        </button>
+    </div>
+
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-base bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:bg-transparent">
+        
+        <li>
+          <a href="#" class="block py-2 px-3 text-white text-lg font-semibold hover:text-fg-brand">Home</a>
+        </li>
+
+        <li>
+          <a href="#" class="block py-2 px-3 text-heading text-lg font-semibold hover:text-fg-brand">About</a>
+        </li>
+
+        <li>
+          <a href="#" class="block py-2 px-3 text-heading text-lg font-semibold hover:text-fg-brand">Services</a>
+        </li>
+
+        <li>
+          <a href="#" class="block py-2 px-3 text-heading text-lg font-semibold hover:text-fg-brand">Contact</a>
+        </li>
+
+        <!-- Mobile Get Started Button -->
+<li class="block md:hidden mt-4">
+  <button class="btn-53 w-full">
+    <div class="original">GET STARTED</div>
+    <div class="letters">
+      <span>G</span><span>E</span><span>T</span><span>S</span><span>T</span><span>A</span><span>R</span><span>T</span><span>E</span><span>D</span>
+    </div>
+  </button>
+</li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<section class="w-full flex flex-col items-center justify-center mt-20 px-4">
+    <div class="w-full flex items-center justify-center mt-10">
+        <div class="w-full mx-auto px-2">
+            
+            <div class="hidden md:block w-full h-[75vh] overflow-hidden rounded-xl">
+                <video class="w-full h-full object-cover rounded-xl" autoplay loop muted playsinline>
+                    <source src="portofolio_video/gig enhanced_1.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="block md:hidden relative w-full pt-[56.25%] overflow-hidden rounded-xl mt-4">
+                <video class="absolute inset-0 w-full h-full object-cover rounded-xl" autoplay loop muted playsinline>
+                    <source src="portofolio.mp4" type="video/mp4">
+                </video>
+            </div>
+
+        </div>
+    </div>
 </section>
 
 
@@ -79,8 +154,8 @@
 
 <!-- RECENT Heading -->
 <section class="pb-12" data-aos="fade-right">
-  <div class="outline-heading-container mb-8   mt-28">
-    <span class="outline-heading">RECENT</span>
+  <div class="outline-heading-container mb-0   mt-12">
+    <span class="outline-heading">RECENT WORK</span>
   </div>
 </section>
 
@@ -95,16 +170,15 @@
 </section>
 
 <!-- WORK Sections -->
-<section class="pt-16 pb-24">
-  <div class="outline-heading-container mb-16" data-aos="fade-left">
-    <span class="outline-heading">WORK</span>
-  </div>
-
+<div class="outline-heading-container mt-0 mb-2" data-aos="fade-left">
+  <span class="outline-heading">WORK</span>
+</div>
   <!-- Talking Head -->
- <div class="mb-20" data-aos="fade-up" data-aos-delay="100">
-  <h3 class="text-2xl sm:text-3xl font-semibold mb-8 text-center" style="font-family: 'Playfair Display', serif;">
-    SHORTS & REELS Videos
-  </h3>
+ <div class="mb-20"  data-aos="fade-up" data-aos-delay="100">
+  <h3 class="text-3xl sm:text-4xl font-semibold mb-8 text-center" style="font-family: 'Playfair Display', serif;">
+  SHORTS & REELS Videos
+</h3>
+
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
@@ -120,6 +194,8 @@
       </iframe>
       <p class="text-sm mt-3 text-gray-400 text-center">Client: Tech Startup</p>
     </div>
+
+    
 
     <!-- Video 2 -->
     <div class="video-card rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
@@ -149,100 +225,8 @@
 
   </div>
 </div>
-
-
-  <!--talking head and  explaliner videos-->
-  <div class="mb-20" data-aos="fade-up" data-aos-delay="200">
-  <h3 class="text-2xl sm:text-3xl font-semibold mb-8 text-center" style="font-family: 'Playfair Display', serif;">
-    Talking Head & Explainer Videos
-  </h3>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-    <!-- Video 1 -->
-    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-      <iframe class="w-full aspect-video rounded-xl"
-        src="https://www.youtube.com/embed/cxVbU6fG4tI?list=PLQhU-CdBeWjqXj7aS3naf4Ksl3evxH8G1"
-        title="$0 $14,000 in 30 Days With Tik Tok Shop"
-        allowfullscreen>
-      </iframe>
-      <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
-    </div>
-
-    <!-- Video 2 -->
-    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-      <iframe class="w-full aspect-video rounded-xl"
-        src="https://www.youtube.com/embed/3x28Spn87HA?list=PLQhU-CdBeWjqXj7aS3naf4Ksl3evxH8G1"
-        title="AR Brandon Talking protien v4 4k"
-        allowfullscreen>
-      </iframe>
-      <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
-    </div>
-
-    <!-- Video 3 -->
-    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-      <iframe class="w-full aspect-video rounded-xl"
-        src="https://www.youtube.com/embed/3TA9tI5aStg?list=PLQhU-CdBeWjqXj7aS3naf4Ksl3evxH8G1"
-        title="jermey"
-        allowfullscreen>
-      </iframe>
-      <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
-    </div>
-
-  </div>
-</div>
-
-
-  <!-- daily routine  Section -->
-  <div class="mb-20" data-aos="fade-up" data-aos-delay="300">
-  <h3 class="text-2xl sm:text-3xl font-semibold mb-8 text-center" style="font-family: 'Playfair Display', serif;">
-    DAILY ROUTINE
-  </h3>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-8">
-
-    <!-- Video 1 -->
-    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-      <iframe class="w-full aspect-video rounded-xl"
-        src="https://www.youtube.com/embed/8vSCSodjXtI?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl"
-        title="The Wellness Diaries — What I Eat & How I Train To Build Curves"
-        allowfullscreen>
-      </iframe>
-      <p class="text-sm mt-3 text-gray-400 text-center">Project: Fitness Lifestyle Video</p>
-    </div>
-
-    <!-- Video 2 -->
-    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-      <iframe class="w-full aspect-video rounded-xl"
-        src="https://www.youtube.com/embed/X41CAKSn_To?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl"
-        title="Week in the Life – Hybrid Training"
-        allowfullscreen>
-      </iframe>
-      <p class="text-sm mt-3 text-gray-400 text-center">Project: Vlog / Training Video</p>
-    </div>
-
-    <!-- Video 3 -->
-    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-      <iframe class="w-full aspect-video rounded-xl"
-        src="https://www.youtube.com/embed/8ggz9tSugzo?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl"
-        title="My Morning Gym Routine"
-        allowfullscreen>
-      </iframe>
-      <p class="text-sm mt-3 text-gray-400 text-center">Project: Morning Routine Video</p>
-    </div>
-
-  </div>
-</div>
-
-
-  <!-- Reels -->
-  
-
-    <div data-aos="fade-up" data-aos-delay="400">
-  <h3 class="text-2xl sm:text-3xl font-semibold mb-8 text-center" style="font-family: 'Playfair Display', serif;">
-    SHORTS & REELS VIDEOS
-  </h3>
-
+  <div data-aos="fade-up" data-aos-delay="400">
+ 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
     <!-- Short Video 1 -->
@@ -282,6 +266,231 @@
   </div>
 </div>
 
+
+  <!--talking head and  explaliner videos-->
+  <div class="mb-20  pt-10"  data-aos="fade-up" data-aos-delay="200">
+   <h3 class=" mt-5 sm:text-3xl font-semibold mb-8 text-center" style="font-family: 'Playfair Display', serif;">
+   Talking Head Videos
+  </h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- Video 1 -->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+        src="https://www.youtube.com/embed/cxVbU6fG4tI?list=PLQhU-CdBeWjqXj7aS3naf4Ksl3evxH8G1"
+        title="$0 $14,000 in 30 Days With Tik Tok Shop"
+        allowfullscreen>
+      </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+        src="https://www.youtube.com/embed/3x28Spn87HA?list=PLQhU-CdBeWjqXj7aS3naf4Ksl3evxH8G1"
+        title="AR Brandon Talking protien v4 4k"
+        allowfullscreen>
+      </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+        src="https://www.youtube.com/embed/3TA9tI5aStg?list=PLQhU-CdBeWjqXj7aS3naf4Ksl3evxH8G1"
+        title="jermey"
+        allowfullscreen>
+      </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
+    </div>
+        
+    <!-- Video 4 -->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+      src="https://www.youtube.com/embed/6D63LmU544Y"
+    title="AR Brandon Video#06 4k"
+    allowfullscreen>
+  </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
+    </div>
+    
+    <!-- Video 5-->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+      src="https://www.youtube.com/embed/q7Q-DYbbino"
+  title="I Bought a Failed Business and Turned It Successful"
+    allowfullscreen>
+  </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
+    </div>
+
+     <!-- Video 6-->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+      src="https://www.youtube.com/embed/r8FzjW3Jlws"
+  title="After Effects Is Getting CRAZY Again"
+    allowfullscreen>
+  </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
+    </div>
+
+    
+
+
+  </div>
+</div>
+
+
+  <!-- daily routine  Section -->
+  <div class="mb-20" data-aos="fade-up" data-aos-delay="300">
+  <h3 class="text-2xl sm:text-3xl font-semibold mb-8 text-center" style="font-family: 'Playfair Display', serif;">
+    FITNESS & DAILY ROUTINE 
+  </h3>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-8">
+
+    <!-- Video 1 -->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+        src="https://www.youtube.com/embed/8vSCSodjXtI?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl"
+        title="The Wellness Diaries — What I Eat & How I Train To Build Curves"
+        allowfullscreen>
+      </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Fitness Lifestyle Video</p>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+        src="https://www.youtube.com/embed/X41CAKSn_To?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl"
+        title="Week in the Life – Hybrid Training"
+        allowfullscreen>
+      </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Vlog / Training Video</p>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+        src="https://www.youtube.com/embed/8ggz9tSugzo?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl"
+        title="My Morning Gym Routine"
+        allowfullscreen>
+      </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Morning Routine Video</p>
+    </div>
+
+    <!-- Video 4 -->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+        src="https://www.youtube.com/embed/ozNiIKVhdHI?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl"
+         title="Formed Under Pressure"
+        allowfullscreen>
+      </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Morning Routine Video</p>
+    </div>
+
+     <!-- Video 5 -->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+        src="https://www.youtube.com/embed/ScaAjVsYQ2M?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl"
+        title="A CHAOTIC DAY IN MY LIFE"
+        allowfullscreen>
+      </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Morning Routine Video</p>
+    </div>
+
+     <!-- Video 6 -->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+        src="https://www.youtube.com/embed/iUchqSKX6u4?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl"
+       title = "WHAT I ATE TODAY to lean bulk"
+        allowfullscreen>
+      </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Morning Routine Video</p>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="mb-20" data-aos="fade-up" data-aos-delay="300">
+  <h3 class="text-2xl sm:text-3xl font-semibold mb-8 text-center" style="font-family: 'Playfair Display', serif;">
+    REAL ESTATE VIDEOS 
+  </h3>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-8">
+
+    <!-- Video 1 -->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+        src="https://www.youtube.com/embed/Ol6lj7PlepE?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6"
+        title="RE3 Aramnashat 22072025"
+        allowfullscreen>
+      </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Fitness Lifestyle Video</p>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+        src="https://www.youtube.com/embed/u-XlWx0q0vA?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6"
+        title="Mathias Real Estate Video 2 V2 HD"
+        allowfullscreen>
+      </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Vlog / Training Video</p>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+        src="https://www.youtube.com/embed/nnP9AnXgQ4M?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6"
+    title="Lance Taylor   Plano Real Estate Agent, Ratings & Reviews"
+        allowfullscreen>
+      </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Morning Routine Video</p>
+    </div>
+
+    <!-- Video 4 -->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+     <iframe class="w-full aspect-video rounded-xl"
+      src="https://www.youtube.com/embed/BvuSr_rRdy4?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6"
+    title="a6a539583de24bc2971f3ed052898623"
+    title="Flaen"
+        allowfullscreen>
+      </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Morning Routine Video</p>
+    </div>
+
+     <!-- Video 5 -->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+       src="https://www.youtube.com/embed/H7ZfEGS7R1I?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6"
+    title="18671 VALLEY DR  VILLA PARK, CA"
+        allowfullscreen>
+      </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Morning Routine Video</p>
+    </div>
+
+     <!-- Video 6 -->
+    <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+      <iframe class="w-full aspect-video rounded-xl"
+        src="https://www.youtube.com/embed/BvuSr_rRdy4?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6"
+    title="a6a539583de24bc2971f3ed052898623"
+        allowfullscreen>
+      </iframe>
+      <p class="text-sm mt-3 text-gray-400 text-center">Project: Morning Routine Video</p>
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Reels -->
+  
+
+    
+
 </section>
 
 
@@ -319,28 +528,103 @@
     </section>
 
     
-  
+       <div class="form-container-wrapper">
+
+    <!-- Gradient Border Wrapper -->
+    <div class="form-card-gradient-wrapper">
+
+      <!-- Inner Form Card -->
+      <div class="form-card">
+        <h2 class="text-3xl font-extrabold text-white mt-4 mb-2 text-center">Get in Touch</h2>
+        <p class="text-gray-400 mb-8 text-center">We'd love to hear from you. Send me a message!</p>
+
+        <form id="contactForm" onsubmit="handleSubmit(event)" class="space-y-6">
+
+          <!-- Name Input -->
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Your Name</label>
+            <div class="input-gradient-wrapper">
+              <input type="text" id="name" name="name" required
+                     placeholder="Enter your name"
+                     class="input-field-content"
+                     aria-label="Your Name">
+            </div>
+          </div>
+
+          <!-- Email Input -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+            <div class="input-gradient-wrapper">
+              <input type="email" id="email" name="email" required
+                     placeholder="you@example.com"
+                     class="input-field-content"
+                     aria-label="Email Address">
+            </div>
+          </div>
+
+          <!-- Message Textarea -->
+          <div class="input-gradient-wrapper textarea-wrapper">
+  <textarea id="message" name="message" rows="10" required
+            placeholder="What's on your mind?"
+            class="input-field-content resize-none"
+            aria-label="Your Message"></textarea>
+</div>
 
 
+          <!-- Submit Button (EXACT SAME STAR BUTTON) -->
+          <div>
+            <button type="submit" id="submitButton" class="star-submit-button">
+              Send Message
+              <div class="star-1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                  <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+                </svg>
+              </div>
+              <div class="star-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                  <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+                </svg>
+              </div>
+              <div class="star-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                  <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+                </svg>
+              </div>
+              <div class="star-4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                  <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+                </svg>
+              </div>
+              <div class="star-5">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                  <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+                </svg>
+              </div>
+              <div class="star-6">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53">
+                  <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+                </svg>
+              </div>
+            </button>
+          </div>
 
-<!-- From Uiverse.io by gharsh11032000 --> 
-<div class="form-container">
-      <form class="form">
-        <div class="form-group">
-          <label for="email"> Your Name</label>
-          <input type="text" id="email" name="email" required="">
+        </form>
+
+        <!-- Success/Error Message -->
+        <div id="messageBox" class="mt-6 p-4 rounded-lg hidden transition duration-300 bg-black border border-gray-600 text-white" role="alert">
+          <p id="messageText" class="font-medium"></p>
         </div>
-         <div class="form-group">
-          <label for="email"> Email</label>
-          <input type="text" id="email" name="email" required="">
-        </div>
-        <div class="form-group">
-          <label for="textarea">Message</label>
-          <textarea name="textarea" id="textarea" rows="10" cols="50" required="">          </textarea>
-        </div>
-        <button class="form-submit-btn" type="submit">Submit</button>
-      </form>
+
+      </div>
+
     </div>
+  </div>
+
+
+
+
+<!-- From Uiverse.io by Praashoo7 --> 
+
 
 <!-- Footer -->
 <footer class="mt-24 py-12 bg-black border-t border-gray-800">
@@ -356,6 +640,13 @@
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
+</script>
 
 </body>
 </html>
