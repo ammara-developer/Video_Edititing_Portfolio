@@ -24,60 +24,7 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
 .marquee-card { background:#111; border:1px solid #333; border-radius:0.75rem; overflow:hidden; box-shadow:0 10px 15px rgba(0,0,0,0.5); flex-shrink:0; width:90vw; max-width:350px; display:inline-block; position:relative; }
 .marquee-title-bar { position:absolute; top:1rem; left:0; background:rgba(0,0,0,0.8); color:white; padding:0.5rem 1rem; font-family:'Playfair Display',serif; font-size:1rem; font-weight:600; z-index:20; border-top-right-radius:0.5rem; border-bottom-right-radius:0.5rem; transition:opacity 0.3s ease; }
 
-/* WhatsApp Button */
-.whatsapp-btn { 
-  position:fixed; 
-  right:24px; 
-  bottom:24px; 
-  display:flex; 
-  align-items:center; 
-  gap:10px; 
-  background:#25D366; 
-  padding:16px 26px; 
-  border-radius:50px; 
-  color:white; 
-  font-size:18px; 
-  font-weight:600; 
-  text-decoration:none; 
-  box-shadow:0 0 25px rgba(37,211,102,0.7); 
-  transition: transform 0.2s ease, box-shadow 0.2s ease; 
-  z-index:999; 
-  animation:pulse-glow 2.2s infinite ease-in-out; 
-}
 
-/* Hover */
-.whatsapp-btn:hover { 
-  transform:scale(1.12); 
-  box-shadow:0 0 35px rgba(37,211,102,0.9); 
-}
-
-/* Glow Animation */
-@keyframes pulse-glow { 
-  0% {box-shadow:0 0 10px rgba(37,211,102,0.7),0 0 20px rgba(37,211,102,0.5);}  
-  50% {box-shadow:0 0 25px rgba(37,211,102,1),0 0 50px rgba(37,211,102,0.8); transform:scale(1.07);}  
-  100% {box-shadow:0 0 10px rgba(37,211,102,0.7),0 0 20px rgba(37,211,102,0.5);} 
-}
-
-/* 🔥 Hide WhatsApp text on phones */
-@media (max-width: 600px) {
-  .whatsapp-btn span {
-    display: none;
-  }
-
-  .whatsapp-btn {
-    padding: 14px; /* smaller circle */
-    border-radius: 50%; 
-    .whatsapp-btn { position:fixed; z-index:999; }
-
-  }
-}
-
-@media(max-width:640px){
-  .marquee-inner { flex-direction:column; gap:2rem; white-space:normal; animation: none; }
-  .marquee-card { width:100%; max-width:100%; aspect-ratio:16/9; margin:0 auto; }
-  .marquee-card iframe { width:100%; height:auto; aspect-ratio:9/16; }
-  
-}
 
 
 
@@ -705,84 +652,7 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
             fill: #16BFFD;
         }
 
-/* YouTube container (above WhatsApp) */
-.youtube-container {
-  position: fixed;
-  right: 8px;  /* moved slightly more toward the center from the right edge */
-  bottom: 100px; /* keep it above WhatsApp button */
-  text-align: center;
-  z-index: 999;
-  animation: fadeInUp 1s ease forwards;
-}
 
-
-/* Animated text */
-.youtube-text {
-  font-size: 25px;       /* increased size */
-  color: #fff;
-  background: rgba(0,0,0,0.45);
-  padding: 8px 12px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  font-weight: 600;
-  backdrop-filter: blur(4px);
-  line-height: 1.3;
-  text-align: center;
-  animation: textBounce 2s infinite ease-in-out;
-}
-
-/* YouTube button only */
-.youtube-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: #FF0000;
-  border-radius: 50%;
-  box-shadow: 0 0 25px rgba(255,0,0,0.7);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-  animation: youtubePulse 2.2s infinite ease-in-out; /* scoped to YouTube only */
-}
-
-.youtube-btn:hover {
-  transform: scale(1.12);
-  box-shadow: 0 0 35px rgba(255,0,0,0.9);
-}
-
-.youtube-btn svg {
-  width: 30px;
-  height: 30px;
-  fill: #fff;
-}
-
-/* Only YouTube button glow animation */
-@keyframes youtubePulse {
-  0% { box-shadow:0 0 10px rgba(255,0,0,0.7),0 0 20px rgba(255,0,0,0.5);}  
-  50% { box-shadow:0 0 25px rgba(255,0,0,1),0 0 50px rgba(255,0,0,0.8); transform: scale(1.07);}  
-  100% { box-shadow:0 0 10px rgba(255,0,0,0.7),0 0 20px rgba(255,0,0,0.5);} 
-}
-
-/* Text bounce animation */
-@keyframes textBounce {
-  0%, 100% { transform: translateY(0); opacity: 0.9; }
-  50% { transform: translateY(-4px); opacity: 1; }
-}
-
-/* Fade in from bottom */
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Mobile adjustments */
-@media (max-width: 600px) {
-  .youtube-container { bottom: 90px; }
-  .youtube-text { font-size: 14px; padding: 6px 10px; }
-  .youtube-btn { width: 50px; height: 50px; }
-  .youtube-btn svg { width: 24px; height: 24px; }
-}
 
 
 
@@ -807,4 +677,197 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
     backdrop-filter: blur(6px);
 }
 
+
+
+.full-bleed-mobile {
+    /* Sets the width to 100% of the viewport width */
+    width: 100vw !important; 
+    
+    /* The full-bleed trick: 
+      1. Position it relative to its containing block.
+      2. Move the left edge 50% across the container.
+      3. Move it back by half the viewport width (-50vw). 
+      This ensures the left edge aligns with the screen's left edge, 
+      regardless of padding on parent elements.
+    */
+    position: relative;
+    left: 50%;
+    margin-left: -50vw; 
+    
+    /* Optional: Removes the top margin you had */
+    margin-top: 0 !important; 
+}
+
+.full-bleed-mobile {
+    width: 100vw !important; 
+    position: relative;
+    left: 50%;
+    margin-left: -50vw; 
+    margin-top: 0 !important; 
+}
+
+
+
+
+/* ====================================
+   1. BASE STYLES (Desktop and General Design)
+   ==================================== */
+
+/* YouTube button - Base Look */
+.youtube-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #FF0000;
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(255,0,0,0.7);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    animation: youtubePulse 2.2s infinite ease-in-out;
+}
+
+.youtube-btn:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 35px rgba(255,0,0,0.9);
+}
+
+.youtube-btn svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+}
+
+/* YouTube Text */
+.youtube-text {
+    /* You need to set the positioning for desktop here if you want it next to the button */
+    /* If you want it floating, you'd position the .youtube-container */
+    font-size: 16px; 
+    color: #333; /* Example color */
+    background: #fff; /* Example background */
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin: 0;
+    animation: textBounce 2s infinite;
+}
+
+/* WhatsApp Button - Base Look (Desktop/Default Floating Position) */
+.whatsapp-btn {
+    position: fixed; /* Desktop Default Position */
+    right: 24px; 
+    bottom: 24px; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    background: #25D366; 
+    padding: 16px 26px; 
+    border-radius: 50px; 
+    color: white; 
+    font-size: 18px; 
+    font-weight: 600; 
+    text-decoration: none; 
+    box-shadow: 0 0 25px rgba(37,211,102,0.7); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    z-index: 999; 
+    animation: pulse-glow 2.2s infinite ease-in-out; 
+}
+
+.whatsapp-btn:hover { 
+    transform: scale(1.12); 
+    box-shadow: 0 0 35px rgba(37,211,102,0.9); 
+}
+
+.whatsapp-btn svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+}
+
+
+/* ====================================
+   2. KEYFRAME ANIMATIONS
+   ==================================== */
+
+@keyframes youtubePulse {
+    0%, 100% { box-shadow: 0 0 10px rgba(255,0,0,0.7), 0 0 20px rgba(255,0,0,0.5); } 
+    50% { box-shadow: 0 0 25px rgba(255,0,0,1), 0 0 50px rgba(255,0,0,0.8); transform: scale(1.07); } 
+}
+
+@keyframes pulse-glow { 
+    0%, 100% { box-shadow: 0 0 10px rgba(37,211,102,0.7), 0 0 20px rgba(37,211,102,0.5); } 
+    50% { box-shadow: 0 0 25px rgba(37,211,102,1), 0 0 50px rgba(37,211,102,0.8); transform: scale(1.07); } 
+}
+
+@keyframes textBounce {
+    0%, 100% { transform: translateY(0); opacity: 0.9; }
+    50% { transform: translateY(-4px); opacity: 1; }
+}
+
+
+/* ====================================
+   3. RESPONSIVENESS (Mobile Grouping & Sizing)
+   ==================================== */
+
+@media (max-width: 640px) {
+    /* --- NEW FLOATING CONTAINER FOR MOBILE --- */
+    /* This overrides the desktop positions and stacks them vertically. */
+    .floating-buttons-mobile {
+        position: fixed;
+        right: 16px; /* Space from the right edge */
+        bottom: 16px; /* Space from the bottom edge */
+        display: flex;
+        flex-direction: column; /* Stacks children vertically */
+        gap: 12px; /* Space between the two icons */
+        align-items: flex-end; /* Aligns them both to the right */
+        z-index: 1000;
+    }
+
+    /* --- WHATSAPP OVERRIDES (Now fixed by the parent container) --- */
+    .whatsapp-btn {
+        /* CRITICAL: Overrides the desktop 'position:fixed' and uses parent's positioning */
+        position: static; 
+        right: auto;
+        bottom: auto;
         
+        /* Mobile: Icon-only, smaller circle */
+        padding: 12px; 
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        gap: 0;
+        display: flex; /* Ensure it centers the icon */
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Hide the 'Chat with me' text on small screens */
+    .whatsapp-btn span {
+        display: none;
+    }
+
+    /* --- YOUTUBE OVERRIDES --- */
+    .youtube-container {
+        /* Makes the YouTube text and button group align properly */
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-end; 
+    }
+    
+    /* Hide the 'ALL VIDEOS ARE HHERE' text on small screens */
+    .youtube-text {
+        display: none; 
+    }
+    
+    /* Mobile: Smaller circle size */
+    .youtube-btn { 
+        width: 50px; 
+        height: 50px; 
+    }
+    .youtube-btn svg { 
+        width: 24px; 
+        height: 24px; 
+    }
+}
+        
+
