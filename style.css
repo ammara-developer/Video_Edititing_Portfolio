@@ -11,30 +11,70 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
             min-height: 100vh;
             padding: 1rem;}
 
+html {
+  scroll-behavior: smooth;
+}
 
+/* Adjust scroll position to account for fixed navbar */
+section[id] {
+  scroll-margin-top: 80px;
+}
 
 /* Outline Headings */
-.outline-heading-container { font-size:clamp(2rem, 10vw, 5rem); font-weight:900; line-height:0.7; text-align:center; position:relative; z-index:10; margin-bottom: 0.25rem; }
-.outline-heading { color:transparent; -webkit-text-stroke:3px #fff; display:inline-block; transition:all 0.3s ease-in-out; }
-.outline-heading:hover { -webkit-text-stroke:3px #a8a8a8; transform:translateY(-5px); }
+.outline-heading-container {
+  font-size: clamp(2rem, 10vw, 5rem);
+  font-weight: 800; /* Middle ground */
+  line-height: 0.9;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 0.25rem;
+}
+
+.outline-heading {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #fff; /* Even thinner for cleaner look */
+  text-stroke: 1.5px #fff;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 0.05em;
+  paint-order: stroke fill;
+}
+
+.outline-heading:hover {
+  -webkit-text-stroke: 1.5px #a8a8a8;
+  text-stroke: 1.5px #a8a8a8;
+  transform: translateY(-5px);
+}
 
 /* Marquee */
 .marquee-wrapper { overflow:hidden; width:100%; }
 .marquee-inner { display:flex; white-space:nowrap; gap:1.5rem; }
-.marquee-card { background:#111; border:1px solid #333; border-radius:0.75rem; overflow:hidden; box-shadow:0 10px 15px rgba(0,0,0,0.5); flex-shrink:0; width:90vw; max-width:350px; display:inline-block; position:relative; }
+.marquee-card { background:#111; border:1px solid #333; border-radius:0.75rem; overflow:hidden; box-shadow:0 10px 15px rgba(0,0,0,0.5); flex-shrink:0; width:90vw; max-width:350px; display:flex; position:relative; }
 .marquee-title-bar { position:absolute; top:1rem; left:0; background:rgba(0,0,0,0.8); color:white; padding:0.5rem 1rem; font-family:'Playfair Display',serif; font-size:1rem; font-weight:600; z-index:20; border-top-right-radius:0.5rem; border-bottom-right-radius:0.5rem; transition:opacity 0.3s ease; }
 
-
-
-
-
-
+/* Mobile: Stack videos vertically */
+@media (max-width: 640px) {
+  .marquee-inner {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+  
+  .marquee-card {
+    width: 100% !important;
+    max-width: 100%;
+  }
+  
+  .marquee-wrapper {
+    overflow: visible !important;
+  }
+}
 /* From Uiverse.io by gharsh11032000 */
 .form-container {
   width: 100%;
   max-width: 600px; /* responsive max */
   background: linear-gradient(#212121, #212121) padding-box,
-              linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+   linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
   border: 2px solid transparent;
   padding: 32px;
   font-size: 16px;
@@ -44,34 +84,29 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
   gap: 24px;
   box-sizing: border-box;
   border-radius: 20px;
-  margin: 0 auto; /* centered for all screens */
+  margin: 0 auto; 
 }
-
 /* Button active state */
 .form-container button:active {
   scale: 0.95;
 }
-
 /* Form layout */
 .form-container .form {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-
 /* Form group */
 .form-container .form-group {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
-
 .form-container .form-group label {
   color: #aaa;
   font-weight: 600;
   font-size: 14px;
 }
-
 .form-container .form-group input,
 .form-container .form-group textarea {
   width: 100%;
@@ -82,12 +117,10 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
   border: 1px solid #414141;
   font-size: 16px;
 }
-
 .form-container .form-group textarea {
   height: 120px;
   resize: none;
 }
-
 .form-container .form-submit-btn {
   align-self: center;
   width: 100%;
@@ -101,13 +134,11 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
   font-weight: 600;
   color: #717171;
 }
-
 .form-container .form-submit-btn:hover {
   background-color: #fff;
   border-color: #fff;
   color: #000;
 }
-
 /* MOBILE FIX – Responsive adjustments */
 @media (max-width: 480px) {
   .form-container {
@@ -119,24 +150,17 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
     max-width: 100%;
   }
 }
-
-
-
     /* Tailwind + small custom animations */
     @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     @keyframes swing { 0% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(8deg) scale(1.02); } 100% { transform: rotate(0deg) scale(1); } }
     @keyframes glowPulse { 0% { box-shadow: 0 0 12px rgba(99,102,241,0.25); } 50% { box-shadow: 0 0 28px rgba(99,102,241,0.45); } 100% { box-shadow: 0 0 12px rgba(99,102,241,0.25); } }
-
-    .spin-slow { animation: spin-slow 9s linear infinite; }
+   .spin-slow { animation: spin-slow 9s linear infinite; }
     .swing { animation: swing 3.6s ease-in-out infinite; transform-origin: center; }
     .glow-pulse { animation: glowPulse 2.6s ease-in-out infinite; }
-
-    /* small utility so the crossing bars have crisp edges on low-DPI */
+   /* small utility so the crossing bars have crisp edges on low-DPI */
     .bar { -webkit-backface-visibility: hidden; backface-visibility: hidden; }
-
     /* make sure text remains sharp & layered above cross */
     .blend-top { mix-blend-mode: screen; }
-
     /* responsive sizing helpers for the demo box */
     @media (min-width: 768px) {
       .demo-size { width: 360px; height: 360px; }
@@ -144,7 +168,6 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
     @media (max-width: 767px) {
       .demo-size { width: 260px; height: 260px; }
     }
-
 
 /* Glass navlink underline animation (Unchanged) */
 .nav-anim {
@@ -168,8 +191,6 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
 .nav-anim:hover::after {
   width: 100%;
 }
-
-
 
 /* Logo animations */
 /* Note: The small logo uses 'spin-v-slow' and 'spin-medium'. */
@@ -235,10 +256,6 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
   .demo-size { width: 240px; height: 240px; }
 }
 
-
-
-
-/* Sizing for animated logo box (Used for the top-left logo) */
 /* REDUCED SIZE FOR HEADER CORNER */
 @media (min-width: 768px) {
     .demo-size { width: 140px; height: 120px; } /* Smaller size for logo in corner */
@@ -252,10 +269,6 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
     -webkit-backface-visibility: hidden; 
     backface-visibility: hidden; 
 }
-
-
-/* --- Mobile Menu & Hamburger Animation CSS --- */
-
 /* Hamburger to Cross Transformation */
 .menu-open #line1 {
     transform: translateY(6px) rotate(45deg);
@@ -264,7 +277,6 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
 .menu-open #line2 {
     opacity: 0;
 }
-
 .menu-open #line3 {
     transform: translateY(-6px) rotate(-45deg);
 }
@@ -276,7 +288,6 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
     padding-bottom: 5px;
     transition: color 0.3s ease;
 }
-
 .mobile-nav-link::after {
     content: "";
     position: absolute;
@@ -287,16 +298,13 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
     background: linear-gradient(to right, #e81cff, #40c9ff);
     transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Spring-like animation */
 }
-
 .mobile-nav-link:hover::after {
     width: 100%;
 }
-
 /* Overlay visible state handled by JS removing/adding translate-x-full */
 .menu-open#mobile-menu-overlay {
     transform: translateX(0);
 }
-
 
 .btn-gradient {
     background: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
@@ -360,9 +368,10 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   font-size: 100%;
   line-height: 1.5;
-  margin: 0;
+ 
   -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
   padding: 0;
+    
 }
 
 .btn-53:disabled {
@@ -402,6 +411,7 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
   place-content: center;
   position: absolute;
   transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1);
+
 }
 
 .btn-53:hover .original {
@@ -680,21 +690,10 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
 
 
 .full-bleed-mobile {
-    /* Sets the width to 100% of the viewport width */
     width: 100vw !important; 
-    
-    /* The full-bleed trick: 
-      1. Position it relative to its containing block.
-      2. Move the left edge 50% across the container.
-      3. Move it back by half the viewport width (-50vw). 
-      This ensures the left edge aligns with the screen's left edge, 
-      regardless of padding on parent elements.
-    */
     position: relative;
     left: 50%;
     margin-left: -50vw; 
-    
-    /* Optional: Removes the top margin you had */
     margin-top: 0 !important; 
 }
 
@@ -705,13 +704,23 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
     margin-left: -50vw; 
     margin-top: 0 !important; 
 }
-
-
-
-
 /* ====================================
    1. BASE STYLES (Desktop and General Design)
    ==================================== */
+
+/* YouTube Container (Desktop Floating Position) */
+.youtube-container {
+
+    position: fixed; 
+    right: 120px;       
+    bottom: 100px;     
+    z-index: 998;      
+    
+    /* Display properties for text/button alignment */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
 
 /* YouTube button - Base Look */
 .youtube-btn {
@@ -741,21 +750,22 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
 
 /* YouTube Text */
 .youtube-text {
-    /* You need to set the positioning for desktop here if you want it next to the button */
-    /* If you want it floating, you'd position the .youtube-container */
     font-size: 16px; 
-    color: #333; /* Example color */
-    background: #fff; /* Example background */
+    color: #333; 
+    background: #fff; 
     padding: 8px 12px;
     border-radius: 8px;
-    margin: 0;
+    margin: 0 auto 8px auto; 
     animation: textBounce 2s infinite;
+    
+    /* Shift the text 2 pixels to the right to center it visually */
+    transform: translateX(2px); 
 }
 
 /* WhatsApp Button - Base Look (Desktop/Default Floating Position) */
 .whatsapp-btn {
     position: fixed; /* Desktop Default Position */
-    right: 24px; 
+    right: 24px;
     bottom: 24px; 
     display: flex; 
     align-items: center; 
@@ -769,7 +779,7 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
     text-decoration: none; 
     box-shadow: 0 0 25px rgba(37,211,102,0.7); 
     transition: transform 0.2s ease, box-shadow 0.2s ease; 
-    z-index: 999; 
+    z-index: 999; /* Highest z-index */
     animation: pulse-glow 2.2s infinite ease-in-out; 
 }
 
@@ -814,52 +824,50 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
     /* This overrides the desktop positions and stacks them vertically. */
     .floating-buttons-mobile {
         position: fixed;
-        right: 16px; /* Space from the right edge */
-        bottom: 16px; /* Space from the bottom edge */
+        right: 16px; 
+        bottom: 16px; 
         display: flex;
         flex-direction: column; /* Stacks children vertically */
-        gap: 12px; /* Space between the two icons */
-        align-items: flex-end; /* Aligns them both to the right */
+        gap: 12px; 
+        align-items: flex-end; 
         z-index: 1000;
     }
 
-    /* --- WHATSAPP OVERRIDES (Now fixed by the parent container) --- */
+    /* CRITICAL: Turn off the desktop fixed position for mobile */
+    .whatsapp-btn, .youtube-container {
+        position: static !important; 
+        right: auto !important;
+        bottom: auto !important;
+        z-index: auto !important;
+    }
+
+    /* --- WHATSAPP OVERRIDES --- */
     .whatsapp-btn {
-        /* CRITICAL: Overrides the desktop 'position:fixed' and uses parent's positioning */
-        position: static; 
-        right: auto;
-        bottom: auto;
-        
-        /* Mobile: Icon-only, smaller circle */
         padding: 12px; 
         border-radius: 50%;
         width: 50px;
         height: 50px;
         gap: 0;
-        display: flex; /* Ensure it centers the icon */
+        display: flex; 
         align-items: center;
         justify-content: center;
     }
 
-    /* Hide the 'Chat with me' text on small screens */
     .whatsapp-btn span {
         display: none;
     }
 
     /* --- YOUTUBE OVERRIDES --- */
     .youtube-container {
-        /* Makes the YouTube text and button group align properly */
         display: flex;
         flex-direction: column; 
         align-items: flex-end; 
     }
     
-    /* Hide the 'ALL VIDEOS ARE HHERE' text on small screens */
     .youtube-text {
         display: none; 
     }
     
-    /* Mobile: Smaller circle size */
     .youtube-btn { 
         width: 50px; 
         height: 50px; 
@@ -870,4 +878,132 @@ body { font-family: 'Inter', sans-serif; background-color:#000; color:var(--text
     }
 }
         
+
+/* ============================================================
+   LOADER STYLES
+============================================================ */
+.loader {
+  position: relative;
+  width: 75px;
+  height: 100px;
+}
+
+.loader__bar {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 50%;
+  background: rgb(255, 255, 255);
+  transform-origin: center bottom;
+  box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.loader__bar:nth-child(1) {
+  left: 0px;
+  transform: scale(1, 0.2);
+  animation: barUp1 4s infinite;
+}
+
+.loader__bar:nth-child(2) {
+  left: 15px;
+  transform: scale(1, 0.4);
+  animation: barUp2 4s infinite;
+}
+
+.loader__bar:nth-child(3) {
+  left: 30px;
+  transform: scale(1, 0.6);
+  animation: barUp3 4s infinite;
+}
+
+.loader__bar:nth-child(4) {
+  left: 45px;
+  transform: scale(1, 0.8);
+  animation: barUp4 4s infinite;
+}
+
+.loader__bar:nth-child(5) {
+  left: 60px;
+  transform: scale(1, 1);
+  animation: barUp5 4s infinite;
+}
+
+.loader__ball {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background:var(--gradient-primary);
+  border-radius: 50%;
+  animation: ball624 4s infinite;
+}
+
+@keyframes ball624 {
+  0% { transform: translate(0, 0); }
+  5% { transform: translate(8px, -14px); }
+  10% { transform: translate(15px, -10px); }
+  17% { transform: translate(23px, -24px); }
+  20% { transform: translate(30px, -20px); }
+  27% { transform: translate(38px, -34px); }
+  30% { transform: translate(45px, -30px); }
+  37% { transform: translate(53px, -44px); }
+  40% { transform: translate(60px, -40px); }
+  50% { transform: translate(60px, 0); }
+  57% { transform: translate(53px, -14px); }
+  60% { transform: translate(45px, -10px); }
+  67% { transform: translate(37px, -24px); }
+  70% { transform: translate(30px, -20px); }
+  77% { transform: translate(22px, -34px); }
+  80% { transform: translate(15px, -30px); }
+  87% { transform: translate(7px, -44px); }
+  90% { transform: translate(0, -40px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes barUp1 {
+  0% { transform: scale(1, 0.2); }
+  40% { transform: scale(1, 0.2); }
+  50% { transform: scale(1, 1); }
+  90% { transform: scale(1, 1); }
+  100% { transform: scale(1, 0.2); }
+}
+
+@keyframes barUp2 {
+  0% { transform: scale(1, 0.4); }
+  40% { transform: scale(1, 0.4); }
+  50% { transform: scale(1, 0.8); }
+  90% { transform: scale(1, 0.8); }
+  100% { transform: scale(1, 0.4); }
+}
+
+@keyframes barUp3 {
+  0% { transform: scale(1, 0.6); }
+  100% { transform: scale(1, 0.6); }
+}
+
+@keyframes barUp4 {
+  0% { transform: scale(1, 0.8); }
+  40% { transform: scale(1, 0.8); }
+  50% { transform: scale(1, 0.4); }
+  90% { transform: scale(1, 0.4); }
+  100% { transform: scale(1, 0.8); }
+}
+
+@keyframes barUp5 {
+  0% { transform: scale(1, 1); }
+  40% { transform: scale(1, 1); }
+  50% { transform: scale(1, 0.2); }
+  90% { transform: scale(1, 0.2); }
+  100% { transform: scale(1, 1); }
+}
+.floating-buttons-mobile {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.floating-buttons-mobile.show {
+    opacity: 1;
+}
+
 
