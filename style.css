@@ -69,87 +69,7 @@ section[id] {
     overflow: visible !important;
   }
 }
-/* From Uiverse.io by gharsh11032000 */
-.form-container {
-  width: 100%;
-  max-width: 600px; /* responsive max */
-  background: linear-gradient(#212121, #212121) padding-box,
-   linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
-  border: 2px solid transparent;
-  padding: 32px;
-  font-size: 16px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  box-sizing: border-box;
-  border-radius: 20px;
-  margin: 0 auto; 
-}
-/* Button active state */
-.form-container button:active {
-  scale: 0.95;
-}
-/* Form layout */
-.form-container .form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-/* Form group */
-.form-container .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.form-container .form-group label {
-  color: #aaa;
-  font-weight: 600;
-  font-size: 14px;
-}
-.form-container .form-group input,
-.form-container .form-group textarea {
-  width: 100%;
-  padding: 14px 18px;
-  border-radius: 10px;
-  color: #fff;
-  background-color: transparent;
-  border: 1px solid #414141;
-  font-size: 16px;
-}
-.form-container .form-group textarea {
-  height: 120px;
-  resize: none;
-}
-.form-container .form-submit-btn {
-  align-self: center;
-  width: 100%;
-  max-width: 250px; /* responsive */
-  background: #313131;
-  border: 1px solid #414141;
-  padding: 14px 18px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  color: #717171;
-}
-.form-container .form-submit-btn:hover {
-  background-color: #fff;
-  border-color: #fff;
-  color: #000;
-}
-/* MOBILE FIX – Responsive adjustments */
-@media (max-width: 480px) {
-  .form-container {
-    padding: 20px;
-    gap: 18px;
-  }
 
-  .form-container .form-submit-btn {
-    max-width: 100%;
-  }
-}
     /* Tailwind + small custom animations */
     @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     @keyframes swing { 0% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(8deg) scale(1.02); } 100% { transform: rotate(0deg) scale(1); } }
@@ -169,28 +89,6 @@ section[id] {
       .demo-size { width: 260px; height: 260px; }
     }
 
-/* Glass navlink underline animation (Unchanged) */
-.nav-anim {
-  position: relative;
-  padding-bottom: 2px;
-  transition: color .3s ease;
-}
-.nav-anim::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0%;
-  height: 2px;
-  background-color: #22d3ee;
-  transition: width .35s ease;
-}
-.nav-anim:hover {
-  color: #22d3ee;
-}
-.nav-anim:hover::after {
-  width: 100%;
-}
 
 /* Logo animations */
 /* Note: The small logo uses 'spin-v-slow' and 'spin-medium'. */

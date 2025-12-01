@@ -9,6 +9,8 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
+
 </head>
 
 <body class="bg-black text-white min-h-screen">
@@ -44,70 +46,97 @@
     </div>
                        <!-- NAVBAR -->
 
-    <nav class="nav-mirror fixed w-full z-20 top-0 start-0">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            
-            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse md:mr-16">
-                <a class="flex flex-col items-center select-none">
-                    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
-  
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-" fill="none" viewBox="0 0 24 24" stroke-width="2">
-                            <defs>
-                                <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" stop-color="#e4afcb"/>
-                                    <stop offset="30%" stop-color="#e2c58b"/>
-                                    <stop offset="64%" stop-color="#c2ce9c"/>
-                                    <stop offset="100%" stop-color="#7edbdc"/>
-                                </linearGradient>
-                            </defs>
-                            <path stroke="url(#iconGradient)" stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M4 6h11a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z" />
-                        </svg>
-                        <span class="text-2xl font-bold text-white tracking-wide" style="font-family: 'Playfair Display', serif;">
-                            VES
-                        </span>
-                    </div>
-                    <span class="text-xs text-gray-300 tracking-wide mt-1" style="font-family: 'Inter', sans-serif;">
-                        VIDEO EDITING SERVICE
+   <nav class="nav-mirror fixed w-full z-20 top-0 start-0">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 md:px-8">
+        
+        <!-- Logo Section - Left aligned on mobile, with space on desktop -->
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse md:mr-6 lg:mr-8">
+            <div class="flex flex-col items-center select-none">
+                <div class="flex items-center justify-center px-2 py-1 md:px-4 md:py-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 md:h-8 md:w-8 mr-1 md:mr-2" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                        <defs>
+                            <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#e4afcb"/>
+                                <stop offset="30%" stop-color="#e2c58b"/>
+                                <stop offset="64%" stop-color="#c2ce9c"/>
+                                <stop offset="100%" stop-color="#7edbdc"/>
+                            </linearGradient>
+                        </defs>
+                        <path stroke="url(#iconGradient)" stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M4 6h11a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z" />
+                    </svg>
+                    <span class="text-xl md:text-2xl font-bold text-white tracking-wide" style="font-family: 'Playfair Display', serif;">
+                        VES
                     </span>
-                </a>
-            </a>
-
-           <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-    <a href="#form" class="btn-53 hidden md:block"> 
-        <div class="original">GET STARTED</div>
-        <div class="letters">
-            <span>G</span><span>E</span><span>T</span>
-            <span>S</span><span>T</span><span>A</span><span>R</span><span>T</span><span>E</span><span>D</span>
-        </div>
-    </a>
-    <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/></svg>
-    </button>
-</div>
-
-            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-base bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:bg-transparent">
-                    <li><a href="#hero" class="block py-2 px-3 text-white text-lg font-semibold hover:text-fg-brand">Home</a></li>
-                    <li><a href="#shorts-reels-gallery" class="block py-2 px-3 text-heading text-lg font-semibold hover:text-fg-brand">Shorts & Reels </a></li>
-                    <li><a href="#talking-head" class="block py-2 px-3 text-heading text-lg font-semibold hover:text-fg-brand">Talking Head</a></li>
-                    <li><a href="#fitness-routine" class="block py-2 px-3 text-heading text-lg font-semibold hover:text-fg-brand">Fitness & Daily Routine</a></li>
-                     <li><a href="#real-estate" class="block py-2 px-3 text-heading text-lg font-semibold hover:text-fg-brand">Real Estate</a></li>
-                    <li class="block md:hidden mt-4">
-                       <a href="#form" class="btn-53 hidden md:block">
-    <div class="original">GET STARTED</div>
-    <div class="letters">
-        <span>G</span><span>E</span><span>T</span>
-        <span>S</span><span>T</span><span>A</span><span>R</span><span>T</span><span>E</span><span>D</span>
-    </div>
-</a>
-                    </li>
-                </ul>
+                </div>
+                <span class="text-[10px] md:text-xs text-gray-300 tracking-wide -mt-1" style="font-family: 'Inter', sans-serif;">
+                    VIDEO EDITING SERVICE
+                </span>
             </div>
+        </a>
+
+        <!-- Button and Mobile Menu Toggle -->
+        <div class="flex md:order-2 space-x-3 md:space-x-4 rtl:space-x-reverse items-center">
+            <!-- Get Started Button - Desktop Only -->
+            <a href="#form" class="btn-53 hidden md:block"> 
+                <div class="original">GET STARTED</div>
+                <div class="letters">
+                    <span>G</span><span>E</span><span>T</span>
+                    <span>S</span><span>T</span><span>A</span><span>R</span><span>T</span><span>E</span><span>D</span>
+                </div>
+            </a>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
+                </svg>
+            </button>
         </div>
-    </nav>
-                              <!-- END OF NAVBAR -->
-                              <!-- BANNER SECTION  -->
+
+        <!-- Navigation Links -->
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-base bg-neutral-secondary-soft md:space-x-6 lg:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:bg-transparent">
+                <li>
+                    <a href="#hero" class="block py-2 px-3 text-white text-base lg:text-lg font-semibold hover:text-fg-brand transition-colors">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#shorts-reels-gallery" class="block py-2 px-3 text-heading text-base lg:text-lg font-semibold hover:text-fg-brand transition-colors">
+                        Shorts & Reels
+                    </a>
+                </li>
+                <li>
+                    <a href="#talking-head" class="block py-2 px-3 text-heading text-base lg:text-lg font-semibold hover:text-fg-brand transition-colors">
+                        Talking Head
+                    </a>
+                </li>
+                <li>
+                    <a href="#fitness-routine" class="block py-2 px-3 text-heading text-base lg:text-lg font-semibold hover:text-fg-brand transition-colors">
+                        Fitness & Daily Routine
+                    </a>
+                </li>
+                <li>
+                    <a href="#real-estate" class="block py-2 px-3 text-heading text-base lg:text-lg font-semibold hover:text-fg-brand transition-colors">
+                        Real Estate
+                    </a>
+                </li>
+                
+                <!-- Mobile Get Started Button -->
+                <li class="block md:hidden mt-4 px-3">
+                    <a href="#form" class="btn-53 w-full block text-center">
+                        <div class="original">GET STARTED</div>
+                        <div class="letters">
+                            <span>G</span><span>E</span><span>T</span>
+                            <span>S</span><span>T</span><span>A</span><span>R</span><span>T</span><span>E</span><span>D</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>                  <!-- BANNER SECTION  -->
 
     <section id="hero" class="w-full flex flex-col items-center justify-center mt-20 px-4 scroll-mt-20">
         <div class="w-full flex items-center justify-center mt-10">
@@ -146,149 +175,144 @@
             <div class="marquee-wrapper w-full relative overflow-hidden sm:overflow-hidden" id="marqueeWrapper">
                 <div class="marquee-inner flex flex-col sm:flex-row gap-6" id="marqueeInner">
                     </div>
-            </div>
+           </div>
                              <!-- </section> END OF MARQUEE -->
                                  <!-- SHORTS & REELS  -->
 
-
-       <section id="shorts-reels-gallery" class="mb-20 scroll-mt-20" data-aos="fade-up" data-aos-delay="100">
+<!-- SHORTS & REELS -->
+<section id="shorts-reels-gallery" class="mb-20 scroll-mt-20" data-aos="fade-up" data-aos-delay="100">
     <h3 class="text-3xl sm:text-4xl font-semibold mb-8 text-center" style="font-family: 'Playfair Display', serif;">
         SHORTS & REELS 
     </h3>
-    </section>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div class="video-card rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-[9/16] rounded-xl" src="https://www.youtube.com/embed/JNjkrPpeW7Q" title="Mick Reel C0442" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Client: Tech Startup</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-[9/16] rounded-xl" src="https://www.youtube.com/embed/KN62wBQkWeM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Vertical Reel: Lifestyle Clip</p>
+        </div>
+        <div class="video-card rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-[9/16] rounded-xl" src="https://www.youtube.com/embed/VuVjeVnFsLk" title="9" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Client: Tech Startup</p>
+        </div>
+    </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div class="video-card rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-[9/16] rounded-xl" src="https://www.youtube.com/embed/JNjkrPpeW7Q" title="Mick Reel C0442" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Client: Tech Startup</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-[9/16] rounded-xl" src="https://www.youtube.com/embed/KN62wBQkWeM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Vertical Reel: Lifestyle Clip</p>
-                </div>
-                <div class="video-card rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-[9/16] rounded-xl" src="https://www.youtube.com/embed/VuVjeVnFsLk" title="9" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Client: Tech Startup</p>
-                </div>
-            </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="400">
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-[9/16] rounded-xl" src="https://www.youtube.com/embed/Vj-8O-mqvAM" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Vertical Reel: Promo Video</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-[9/16] rounded-xl" src="https://www.youtube.com/embed/-WX9tfVJFY8" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Vertical Reel: Product Highlight</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-[9/16] rounded-xl" src="https://www.youtube.com/embed/Y2wsBKup6QI" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Vertical Reel: Lifestyle Clip</p>
+        </div>
+    </div>
+</section>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="400">
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-[9/16] rounded-xl" src="https://www.youtube.com/embed/Vj-8O-mqvAM" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Vertical Reel: Promo Video</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-[9/16] rounded-xl" src="https://www.youtube.com/embed/-WX9tfVJFY8" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Vertical Reel: Product Highlight</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-[9/16] rounded-xl" src=" https://www.youtube.com/embed/Y2wsBKup6QI" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Vertical Reel: Lifestyle Clip</p>
-                </div>
-            </div>
-        </section>
-                                 <!-- TALKING HEAD -->
+<!-- TALKING HEAD -->
+<section id="talking-head" class="mb-20 pt-10 scroll-mt-20" data-aos="fade-up" data-aos-delay="200">
+    <h3 class="mt-5 sm:text-3xl font-semibold mb-8 text-center" style="font-family: 'Playfair Display', serif;">
+        Talking Head Videos
+    </h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/gC19MqJSaFg?list=PLQhU-CdBeWjqXj7aS3naf4Ksl3evxH8G1&vq=hd1080" title="This Stops 90% of YouTube Channels Making Money" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/cxVbU6fG4tI?list=PLQhU-CdBeWjqXj7aS3naf4Ksl3evxH8G1" title="$0 $14,000 in 30 Days With Tik Tok Shop" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/3TA9tI5aStg?list=PLQhU-CdBeWjqXj7aS3naf4Ksl3evxH8G1&vq=hd1080" title="jermey" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/3x28Spn87HA?list=PLQhU-CdBeWjqXj7aS3naf4Ksl3evxH8G1&vq=hd1080" title="AR Brandon Talking protien v4 4k" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/q7Q-DYbbino" title="I Bought a Failed Business and Turned It Successful" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/r8FzjW3Jlws" title="After Effects Is Getting CRAZY Again" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
+        </div>
+    </div>
+</section>
 
-        <section id="talking-head" class="mb-20 pt-10 scroll-mt-20" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="mt-5 sm:text-3xl font-semibold mb-8 text-center" style="font-family: 'Playfair Display', serif;">
-                Talking Head Videos
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- FITNESS & DAILY ROUTINE -->
+<section id="fitness-routine" class="mb-20 scroll-mt-20" data-aos="fade-up" data-aos-delay="300">
+    <h3 class="text-2xl sm:text-3xl font-semibold mb-8 text-center" style="font-family: 'Playfair Display', serif;">
+        FITNESS & DAILY ROUTINE 
+    </h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-8">
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/8vSCSodjXtI?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl&vq=hd1080" title="The Wellness Diaries — What I Eat & How I Train To Build Curves" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: Fitness Lifestyle Video</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/X41CAKSn_To?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl&vq=hd1080" title="Week in the Life – Hybrid Training" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: Vlog / Training Video</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/8ggz9tSugzo?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl&vq=hd1080" title="My Morning Gym Routine" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: GYM ROUTINE VIDEO</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/ozNiIKVhdHI?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl&vq=hd1080" title="Formed Under Pressure" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: Morning Routine Video</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/ScaAjVsYQ2M?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl&vq=hd1080" title="A CHAOTIC DAY IN MY LIFE" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: Morning Routine Video</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/iUchqSKX6u4?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl&vq=hd1080" title="WHAT I ATE TODAY to lean bulk" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: Morning Routine Video</p>
+        </div>
+    </div>
+</section>
 
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/gC19MqJSaFg?list=PLQhU-CdBeWjqXj7aS3naf4Ksl3evxH8G1&vq=hd1080" title="This Stops 90% of YouTube Channels Making Money" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/cxVbU6fG4tI?list=PLQhU-CdBeWjqXj7aS3naf4Ksl3evxH8G1" title="$0 $14,000 in 30 Days With Tik Tok Shop" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/3TA9tI5aStg?list=PLQhU-CdBeWjqXj7aS3naf4Ksl3evxH8G1&vq=hd1080" title="jermey" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/3x28Spn87HA?list=PLQhU-CdBeWjqXj7aS3naf4Ksl3evxH8G1&vq=hd1080" title="AR Brandon Talking protien v4 4k" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/q7Q-DYbbino" title="I Bought a Failed Business and Turned It Successful" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/r8FzjW3Jlws" title="After Effects Is Getting CRAZY Again" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: Talking Head Video</p>
-                </div>
-            </div>
-        </section>
-
-                                  <!-- FITNESS & DAILY ROUTINE -->
-        <section id="fitness-routine" class="mb-20 scroll-mt-20" data-aos="fade-up" data-aos-delay="300">
-            <h3 class="text-2xl sm:text-3xl font-semibold mb-8 text-center" style="font-family: 'Playfair Display', serif;">
-                FITNESS & DAILY ROUTINE 
-            </h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-8">
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/8vSCSodjXtI?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl&vq=hd1080" title="The Wellness Diaries — What I Eat & How I Train To Build Curves" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: Fitness Lifestyle Video</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/X41CAKSn_To?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl&vq=hd1080" title="Week in the Life – Hybrid Training" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: Vlog / Training Video</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/8ggz9tSugzo?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl&vq=hd1080" title="My Morning Gym Routine" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: GYM ROUTINE VIDEO</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/ozNiIKVhdHI?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl&vq=hd1080" title="Formed Under Pressure" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: Morning Routine Video</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/ScaAjVsYQ2M?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl&vq=hd1080" title="A CHAOTIC DAY IN MY LIFE" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: Morning Routine Video</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/iUchqSKX6u4?list=PLQhU-CdBeWjqC7SNe9A_F4X9PUd8kzvIl&vq=hd1080" title="WHAT I ATE TODAY to lean bulk" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: Morning Routine Video</p>
-                </div>
-            </div>
-        </section>
-
-                                 <!-- REAL ESTATE VIDEOS -->
-        <section id="real-estate" class="mb-20 scroll-mt-20">
-            <h3 class="text-2xl sm:text-3xl font-semibold mb-8 text-center" style="font-family: 'Playfair Display', serif;">
-                REAL ESTATE VIDEOS 
-            </h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-8">
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/Ol6lj7PlepE?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6&vq=hd1080" title="RE3 Aramnashat 22072025" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: REAL ESTATE VIDEO</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/u-XlWx0q0vA?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6&vq=hd1080" title="Mathias Real Estate Video 2 V2 HD" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: REAL ESTATE VIDEO</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/nnP9AnXgQ4M?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6&vq=hd1080&vq=hd1080" title="Lance Taylor Plano Real Estate Agent, Ratings & Reviews" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: REAL ESTATE VIDEO</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/BvuSr_rRdy4?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6&vq=hd1080" title="a6a539583de24bc2971f3ed052898623" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: REAL ESTATE VIDEO</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/H7ZfEGS7R1I?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6&vq=hd1080" title="18671 VALLEY DR VILLA PARK, CA" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project: REAL ESTATE VIDEO</p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
-                    <iframe class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/BvuSr_rRdy4?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6&vq=hd1080" title="a6a539583de24bc2971f3ed052898623" allowfullscreen></iframe>
-                    <p class="text-sm mt-3 text-gray-400 text-center">Project:REAL ESTATE VIDEO</p>
-                </div>
-            </div>
-        </section>
+<!-- REAL ESTATE VIDEOS -->
+<section id="real-estate" class="mb-20 scroll-mt-20">
+    <h3 class="text-2xl sm:text-3xl font-semibold mb-8 text-center" style="font-family: 'Playfair Display', serif;">
+        REAL ESTATE VIDEOS 
+    </h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-[5px] md:gap-8">
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/Ol6lj7PlepE?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6&vq=hd1080" title="RE3 Aramnashat 22072025" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: REAL ESTATE VIDEO</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/u-XlWx0q0vA?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6&vq=hd1080" title="Mathias Real Estate Video 2 V2 HD" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: REAL ESTATE VIDEO</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/nnP9AnXgQ4M?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6&vq=hd1080&vq=hd1080" title="Lance Taylor Plano Real Estate Agent, Ratings & Reviews" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: REAL ESTATE VIDEO</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/BvuSr_rRdy4?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6&vq=hd1080" title="a6a539583de24bc2971f3ed052898623" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: REAL ESTATE VIDEO</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/H7ZfEGS7R1I?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6&vq=hd1080" title="18671 VALLEY DR VILLA PARK, CA" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project: REAL ESTATE VIDEO</p>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg transition duration-300 hover:scale-[1.03] hover:shadow-cyan-400/30">
+            <iframe loading="lazy" class="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/BvuSr_rRdy4?list=PLQhU-CdBeWjpVlLKG-HJGQTZNzSdwc8i6&vq=hd1080" title="a6a539583de24bc2971f3ed052898623" allowfullscreen></iframe>
+            <p class="text-sm mt-3 text-gray-400 text-center">Project:REAL ESTATE VIDEO</p>
+        </div>
+    </div>
+</section>
 
         <main class="text-center">
             <section id="contact" class="relative demo-size mx-auto rounded-3xl flex items-center justify-center scroll-mt-20">

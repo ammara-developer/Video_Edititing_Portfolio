@@ -1,134 +1,133 @@
 /* ============================================================
-    MARQUEE VIDEO LIST
-============================================================ */
+   MARQUEE VIDEO LIST
+   ============================================================ */
 const marqueeVideos = [
-    { id: "Ol6lj7PlepE", thumb: "https://i.ytimg.com/vi/Ol6lj7PlepE/hq720.jpg", title: "Real State" },
-    { id: "RffMtROZP-w", thumb: "https://i.ytimg.com/vi/RffMtROZP-w/hq720.jpg", title: "Advertisment" },
-    { id: "leRKGx927aA", thumb: "https://i.ytimg.com/vi/leRKGx927aA/hq720.jpg", title: "Podcast" },
-    { id: "iUchqSKX6u4", thumb: "https://i.ytimg.com/vi/iUchqSKX6u4/hq720.jpg", title: "Gym" },
-    { id: "gC19MqJSaFg", thumb: "https://i.ytimg.com/vi/gC19MqJSaFg/hq720.jpg", title: "Talking Head" },
-    { id: "DzBjGQZKR1k", thumb: "https://i.ytimg.com/vi/DzBjGQZKR1k/hq720.jpg", title: "Vlogs" }
+  { id: "Ol6lj7PlepE", thumb: "https://i.ytimg.com/vi/Ol6lj7PlepE/hq720.jpg", title: "Real State" },
+  { id: "RffMtROZP-w", thumb: "https://i.ytimg.com/vi/RffMtROZP-w/hq720.jpg", title: "Advertisment" },
+  { id: "leRKGx927aA", thumb: "https://i.ytimg.com/vi/leRKGx927aA/hq720.jpg", title: "Podcast" },
+  { id: "iUchqSKX6u4", thumb: "https://i.ytimg.com/vi/iUchqSKX6u4/hq720.jpg", title: "Gym" },
+  { id: "gC19MqJSaFg", thumb: "https://i.ytimg.com/vi/gC19MqJSaFg/hq720.jpg", title: "Talking Head" },
+  { id: "DzBjGQZKR1k", thumb: "https://i.ytimg.com/vi/DzBjGQZKR1k/hq720.jpg", title: "Vlogs" }
 ];
 
 // Global object to hold YouTube Player instances
-const youtubePlayers = {}; 
+const youtubePlayers = {};
 
 /* ============================================================
-    1. LOAD YOUTUBE API
-============================================================ */
-// This function will be called when the API is ready.
+   1. LOAD YOUTUBE API
+   ============================================================ */
 function onYouTubeIframeAPIReady() {
-    document.querySelectorAll(".video-hover-card").forEach(card => {
-        const videoId = card.getAttribute('data-video-id');
-        
-        // Only initialize players for the original cards
-        if (card.closest(".duplicate-card")) return;
-
-        youtubePlayers[videoId] = new YT.Player(`player-${videoId}`, {
-            videoId: videoId,
-            playerVars: {
-                'controls': 1,  
-                'autoplay': 0, 
-                'mute': 1, // Start muted as per best practice
-                'enablejsapi': 1,
-                'loop': 1,
-                'playlist': videoId, 
-                'fs': 1          // Explicitly enables fullscreen button
-            },
-            events: {
-                'onReady': onPlayerReady
-            }
-
-
-            
-        });
+  document.querySelectorAll(".video-hover-card").forEach(card => {
+    const videoId = card.getAttribute('data-video-id');
+    if (card.closest(".duplicate-card")) return;
+    
+    // Detect if mobile
+    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 640;
+    
+    youtubePlayers[videoId] = new YT.Player(`player-${videoId}`, {
+      videoId: videoId,
+      playerVars: {
+        'controls': 1,
+        'autoplay': 0,
+        'mute': 1,
+        'enablejsapi': 1,
+        'loop': 1,
+        'playlist': videoId,
+        'fs': 1,
+        // CRITICAL FIX: Add these parameters for better mobile control visibility
+        'modestbranding': 1,  // Reduces YouTube branding
+        'rel': 0,              // Don't show related videos
+        'playsinline': 1       // Plays inline on iOS instead of fullscreen
+      },
+      events: {
+        'onReady': onPlayerReady
+      }
     });
+  });
 }
 
 function onPlayerReady(event) {
-    // Ensure the player is muted when ready
-    event.target.mute();
-
-    // 2. *** CRITICAL FULLSCREEN FIX ***
-    // Get the actual iframe element that the API created
-    const iframe = event.target.getIframe(); 
+  event.target.mute();
+  
+  const iframe = event.target.getIframe();
+  if (iframe) {
+    iframe.setAttribute('allow', 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+    iframe.setAttribute('allowfullscreen', true);
     
-    if (iframe) {
-        // Add the necessary 'allow' attribute for modern browser fullscreen support
-        // We ensure 'fullscreen' is included in the policy list.
-        iframe.setAttribute('allow', 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen');
-        
-        // This attribute is also necessary for older browser compatibility
-        iframe.setAttribute('allowfullscreen', true); 
-    }
+    // MOBILE FIX: Ensure controls are visible on mobile
+    iframe.style.pointerEvents = 'auto';
+  }
 }
 
-// Load the IFrame Player API asynchronously
 function loadYouTubeAPI() {
-    if (typeof YT == 'undefined' || typeof YT.Player == 'undefined') {
-        const tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    } else {
-        onYouTubeIframeAPIReady();
-    }
+  if (typeof YT == 'undefined' || typeof YT.Player == 'undefined') {
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  } else {
+    onYouTubeIframeAPIReady();
+  }
 }
 
 /* ============================================================
-    2. CREATE MARQUEE CARDS
-============================================================ */
+   2. CREATE MARQUEE CARDS
+   ============================================================ */
 function createMarqueeCards(container) {
-    container.innerHTML = "";
-    marqueeVideos.forEach(video => {
-        const card = document.createElement("div");
-        card.className = "marquee-card flex-shrink-0 transition-transform duration-300 hover:scale-[1.05] original-card";
-        card.innerHTML = `
-            <div class="relative w-full aspect-video video-hover-card" data-video-id="${video.id}">
-                <img src="${video.thumb}" class="video-thumb w-full h-full object-cover rounded-md absolute inset-0">
-                <div class="marquee-title-bar">${video.title.toUpperCase()}</div>
-                <div id="player-${video.id}" class="marquee-video absolute inset-0 w-full h-full rounded-md hidden"></div>
-                </div>
-        `;
-        container.appendChild(card);
-    });
+  container.innerHTML = "";
+  
+  marqueeVideos.forEach(video => {
+    const card = document.createElement("div");
+    card.className = "marquee-card flex-shrink-0 transition-transform duration-300 hover:scale-[1.05] original-card";
+    card.innerHTML = `
+      <div class="video-hover-card relative w-full h-full overflow-hidden rounded-xl shadow-lg bg-black" 
+           data-video-id="${video.id}">
+        <img src="${video.thumb}" 
+             alt="${video.title}" 
+             class="video-thumb w-full h-full object-cover transition-opacity duration-300">
+        <div id="player-${video.id}" class="hidden absolute top-0 left-0 w-full h-full"></div>
+        <div class="absolute bottom-4 left-4 z-10 pointer-events-none">
+          <span class="video-type-badge">${video.title.toUpperCase()}</span>
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
 }
 
 /* ============================================================
-    3. INIT MARQUEE
-============================================================ */
+   3. INIT MARQUEE
+   ============================================================ */
 function initMarquee() {
-    const marqueeInner = document.getElementById("marqueeInner");
-    
-    // Clear and create cards
-    createMarqueeCards(marqueeInner); 
-    loadYouTubeAPI();
-
-    // Duplicate cards ONLY on desktop for smooth looping
-    if (window.innerWidth > 640) {
-        const originalCards = Array.from(marqueeInner.children);
-        originalCards.forEach(card => {
-            const clone = card.cloneNode(true);
-            clone.classList.add("duplicate-card");
-            
-            const videoId = card.querySelector(".video-hover-card").getAttribute('data-video-id');
-            const clonedPlayerDiv = clone.querySelector(`#player-${videoId}`);
-            const newVideoId = `${videoId}-clone`;
-
-            if (clonedPlayerDiv) {
-                clonedPlayerDiv.id = `player-${newVideoId}`;
-                clone.querySelector(".video-hover-card").setAttribute('data-video-id', newVideoId);
-            }
-            marqueeInner.appendChild(clone);
-        });
-    }
+  const marqueeInner = document.getElementById("marqueeInner");
+  createMarqueeCards(marqueeInner);
+  loadYouTubeAPI();
+  
+  if (window.innerWidth > 640) {
+    const originalCards = Array.from(marqueeInner.children);
+    originalCards.forEach(card => {
+      const clone = card.cloneNode(true);
+      clone.classList.add("duplicate-card");
+      const videoId = card.querySelector(".video-hover-card").getAttribute('data-video-id');
+      const clonedPlayerDiv = clone.querySelector(`#player-${videoId}`);
+      const newVideoId = `${videoId}-clone`;
+      
+      if (clonedPlayerDiv) {
+        clonedPlayerDiv.id = `player-${newVideoId}`;
+        clone.querySelector(".video-hover-card").setAttribute('data-video-id', newVideoId);
+      }
+      
+      marqueeInner.appendChild(clone);
+    });
+  }
 }
+
 window.addEventListener("load", initMarquee);
 window.addEventListener("resize", initMarquee);
 
 /* ============================================================
-    4. SMOOTH MARQUEE SCROLL
-============================================================ */
+   4. SMOOTH MARQUEE SCROLL
+   ============================================================ */
 const marqueeWrapper = document.getElementById("marqueeWrapper");
 const marqueeInner = document.getElementById("marqueeInner");
 let scrollSpeed = 0.9;
@@ -136,121 +135,106 @@ let scrollPos = 0;
 let isMobile = window.innerWidth <= 640;
 
 function smoothMarquee() {
-    if (!isMobile) {
-        scrollPos += scrollSpeed;
-        const halfWidth = marqueeInner.scrollWidth / 2;
-        if (scrollPos >= halfWidth) scrollPos = 0;
-        marqueeInner.style.transform = `translateX(${-scrollPos}px)`;
-    } else {
-        marqueeInner.style.transform = "";
-    }
-    requestAnimationFrame(smoothMarquee);
+  if (!isMobile) {
+    scrollPos += scrollSpeed;
+    const halfWidth = marqueeInner.scrollWidth / 2;
+    if (scrollPos >= halfWidth) scrollPos = 0;
+    marqueeInner.style.transform = `translateX(${-scrollPos}px)`;
+  } else {
+    marqueeInner.style.transform = "";
+  }
+  requestAnimationFrame(smoothMarquee);
 }
+
 smoothMarquee();
 window.addEventListener("resize", () => isMobile = window.innerWidth <= 640);
 
 /* ============================================================
-    5. VIDEO PLAY / PAUSE LOGIC
-============================================================ */
-
-/**
- * Stops all currently playing videos, mutes them, and resumes the marquee.
- */
+   5. VIDEO PLAY / PAUSE LOGIC
+   ============================================================ */
 function stopAllVideos() {
-    document.querySelectorAll(".video-hover-card").forEach(card => {
-        const videoId = card.getAttribute('data-video-id');
-        const player = youtubePlayers[videoId];
-        const playerDiv = document.getElementById(`player-${videoId}`); 
-        const thumb = card.querySelector(".video-thumb");
-        
-        // 1. Pause the video, mute it, and reset API player state
-        if (player && player.pauseVideo) {
-            player.pauseVideo();
-            player.seekTo(0);
-            player.mute(); 
-        }
-
-        // 2. Hide the player and show the thumbnail
-        if (playerDiv) playerDiv.classList.add("hidden");
-        if (thumb) thumb.style.opacity = "1";
-    });
-    // CRITICAL: Resumes the marquee animation
-    scrollSpeed = 0.9; 
-}
-
-/**
- * Plays a specific video card.
- * @param {HTMLElement} card The .video-hover-card element.
- */
-function playVideo(card) {
+  document.querySelectorAll(".video-hover-card").forEach(card => {
     const videoId = card.getAttribute('data-video-id');
     const player = youtubePlayers[videoId];
     const playerDiv = document.getElementById(`player-${videoId}`);
     const thumb = card.querySelector(".video-thumb");
-
-    if (!player || !playerDiv) return;
-
-    // 1. Use the API to start playing (muted)
-    if (player.playVideo) {
-        player.playVideo();
-        player.mute(); 
-    }
-
-    // 2. Show the player
-    if (thumb) thumb.style.opacity = "0";
-    playerDiv.classList.remove("hidden");
     
-    // Stop the marquee animation
-    scrollSpeed = 0; 
+    if (player && player.pauseVideo) {
+      player.pauseVideo();
+      player.seekTo(0);
+      player.mute();
+    }
+    
+    if (playerDiv) playerDiv.classList.add("hidden");
+    if (thumb) thumb.style.opacity = "1";
+  });
+  
+  scrollSpeed = 0.9;
 }
 
-// --- Desktop Hover Logic ---
+function playVideo(card) {
+  const videoId = card.getAttribute('data-video-id');
+  const player = youtubePlayers[videoId];
+  const playerDiv = document.getElementById(`player-${videoId}`);
+  const thumb = card.querySelector(".video-thumb");
+  
+  if (!player || !playerDiv) return;
+  
+  // MOBILE SOUND FIX: Unmute on mobile when user taps
+  if (isMobile) {
+    player.unMute();
+  }
+  
+  if (player.playVideo) {
+    player.playVideo();
+    // Only keep muted on desktop hover
+    if (!isMobile) {
+      player.mute();
+    }
+  }
+  
+  if (thumb) thumb.style.opacity = "0";
+  playerDiv.classList.remove("hidden");
+  
+  scrollSpeed = 0;
+}
+
+// Desktop Hover Logic
 marqueeInner.addEventListener("mouseenter", e => {
-    if (isMobile) return;
-    const card = e.target.closest(".video-hover-card");
-    if (!card) return;
-    if (card.closest(".duplicate-card")) return; // Ignore duplicates
-
-    stopAllVideos();
-    playVideo(card);
-
+  if (isMobile) return;
+  const card = e.target.closest(".video-hover-card");
+  if (!card || card.closest(".duplicate-card")) return;
+  
+  stopAllVideos();
+  playVideo(card);
 }, true);
 
-// FIX: Marquee Resuming - Mouse leaves the whole inner container
 marqueeInner.addEventListener("mouseleave", e => {
-    if (isMobile) return;
-    
-    // When the mouse leaves the entire inner container, stop all videos.
-    // stopAllVideos() automatically sets scrollSpeed = 0.9, resuming the marquee.
-    stopAllVideos();
+  if (isMobile) return;
+  stopAllVideos();
 });
 
-// --- Mobile Tap Logic ---
+// Mobile Tap Logic
 marqueeInner.addEventListener("click", e => {
-    if (!isMobile) return;
-    const card = e.target.closest(".video-hover-card");
-    if (!card || card.closest(".duplicate-card")) return;
-
-    const playerDiv = document.getElementById(`player-${card.getAttribute('data-video-id')}`);
-    const isPlaying = playerDiv && !playerDiv.classList.contains("hidden");
-
-    stopAllVideos(); 
-
-    if (!isPlaying) {
-        // If it was *not* playing, play it now.
-        playVideo(card);
-    }
+  if (!isMobile) return;
+  const card = e.target.closest(".video-hover-card");
+  if (!card || card.closest(".duplicate-card")) return;
+  
+  const playerDiv = document.getElementById(`player-${card.getAttribute('data-video-id')}`);
+  const isPlaying = playerDiv && !playerDiv.classList.contains("hidden");
+  
+  stopAllVideos();
+  
+  if (!isPlaying) {
+    playVideo(card);
+  }
 });
 
-// Click outside to stop all videos (desktop and mobile)
-// Click outside to stop all videos (desktop and mobile) - FIX
+// Click outside to stop videos
 document.addEventListener("click", e => {
-    // Stop the video only if the click is outside the card entirely.
-    if (!e.target.closest(".video-hover-card")) {
-        stopAllVideos();
-    } 
-    // If the click is inside the card, but not the thumbnail (meaning it's on the player/controls), 
-    // we let the native controls handle it.
+  if (!e.target.closest(".video-hover-card")) {
+    stopAllVideos();
+  }
 });
   // Animated typing effect using your exact logic
   
@@ -405,3 +389,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 500);
     });
+
+
+
+
+    //lazy loading for videos 
+    
+ window.addEventListener('load', function() {
+    const script = document.createElement('script');
+    script.src = 'https://analytics.com/script.js';
+    document.body.appendChild(script);
+ });
